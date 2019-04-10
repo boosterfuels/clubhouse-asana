@@ -22,7 +22,7 @@ exports.getTasks = async function (projectId) {
 
   for (const t of tasks.data) {
     let task = await getTaskDetails(t.id)
-    if (task) {
+    if (task && !task.completed) {
       stories.push(new Story({
         asanaId: task.id,
         name: task.name,
