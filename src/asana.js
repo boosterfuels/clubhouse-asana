@@ -26,6 +26,7 @@ exports.getTasks = async function (projectId) {
     if (task && !task.completed) {
       stories.push(new Story({
         asanaId: task.id,
+        external_id: `https://app.asana.com/0/${projectId}/${task.id}`,
         name: task.name,
         description: task.notes
       }))

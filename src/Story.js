@@ -7,6 +7,10 @@ module.exports = new Archetype({
     $type: 'number',
     $required: true
   },
+  external_id: {
+    $type: 'string',
+    $required: true
+  },
   name: {
     $type: 'string',
     $required: true
@@ -16,8 +20,8 @@ module.exports = new Archetype({
     $required: true,
     $default: ''
   },
-  subtasks: {
-    $type: ['string'],
+  tasks: {
+    $type: [Object],
     $required: true,
     $default: []
   },

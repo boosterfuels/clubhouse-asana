@@ -34,7 +34,7 @@ async function run () {
   // Include Asana subtasks for each task, if any
   spinner.text = 'Fetching Subtasks for each Asana Task'
   for (const story of stories) {
-    story.subtasks = await asana.getSubtasks(story)
+    story.tasks = await asana.getSubtasks(story)
   }
 
   // Include Asana comments for each task, if any
@@ -46,12 +46,9 @@ async function run () {
   // Create a new Clubhouse Story for each Asana Task
   spinner.text = 'Creating stories in your Clubhouse project'
   for (const story of stories) {
-    clubhouse.createStory({
-      project_id: commander.to,
-      name: story.name,
-      description: story.description,
-      comments: story.comments
-    })
+    delete story.asanaId
+    story.project_id = commander.to
+    clubhouse.createStory(story)
   }
 
   spinner.succeed(`Finished migrating ${stories.length} Asana Tasks to Clubhouse Stories!`)
