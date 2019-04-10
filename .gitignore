@@ -1,5 +1,6 @@
 node_modules
 coverage
 .idea
+.swp
 npm-debug.log
 package-lock.json
