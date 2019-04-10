@@ -45,7 +45,9 @@ exports.getSubtasks = async function (story) {
 
   for (const st of subtasks.data) {
     let subtask = await getTaskDetails(st.id)
-    if (subtask && !subtask.completed) { storyTasks.push(subtask.name) }
+    if (subtask && !subtask.completed) {
+      storyTasks.push({ description: subtask.name })
+    }
   }
 
   return storyTasks

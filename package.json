@@ -1,6 +1,6 @@
 {
   "name": "clubhouse-asana",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Migration tool for importing Asana tasks into Clubhouse stories.",
   "keywords": [
     "clubhouse",
