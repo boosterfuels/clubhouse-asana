@@ -1,6 +1,6 @@
 {
   "name": "clubhouse-asana",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Import helper for migrating Asana tasks to Clubhouse stories.",
   "keywords": [
     "clubhouse",
@@ -19,6 +19,9 @@
     "lint": "standard"
   },
   "main": "index.js",
+  "bin": {
+    "clubhouse-asana": "./index.js"
+  },
   "dependencies": {
     "archetype": "^0.9.0",
     "asana": "^0.16.6",
