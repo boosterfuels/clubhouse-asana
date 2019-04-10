@@ -1,0 +1,31 @@
+{
+  "name": "clubhouse-asana",
+  "version": "0.1.0",
+  "description": "Import helper for migrating Asana tasks to Clubhouse stories.",
+  "keywords": [
+    "clubhouse",
+    "asana",
+    "migration",
+    "tool"
+  ],
+  "author": "Diego Netto <d@trybooster.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boosterfuels/clubhouse-asana.git"
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "archetype": "^0.9.0",
+    "asana": "^0.16.6",
+    "clubhouse-lib": "^0.5.0",
+    "commander": "^2.20.0",
+    "ora": "^3.4.0",
+    "standard": "^12.0.1"
+  },
+  "devDependencies": {}
+}
