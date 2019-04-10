@@ -38,7 +38,7 @@ async function run () {
   }
 
   // Include Asana comments for each task, if any
-  spinner.text = 'Including any comments that you might have'
+  spinner.text = 'Fetching Comments from parent Tasks'
   for (const story of stories) {
     story.comments = await asana.getComments(story)
   }
@@ -54,5 +54,5 @@ async function run () {
     })
   }
 
-  spinner.succeed('Finished migrating Asana Tasks to Clubhouse Stories!')
+  spinner.succeed(`Finished migrating ${stories.length} Asana Tasks to Clubhouse Stories!`)
 }

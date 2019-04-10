@@ -19,8 +19,9 @@ exports.init = function (token) {
 exports.getTasks = async function (projectId) {
   let stories = []
   let tasks = await asana.tasks.findByProject(projectId)
+  tasks = await tasks.fetch()
 
-  for (const t of tasks.data) {
+  for (const t of tasks) {
     let task = await getTaskDetails(t.id)
     if (task && !task.completed) {
       stories.push(new Story({
